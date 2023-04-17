@@ -36,5 +36,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HassanElwi/react-metaponic-ui.git"
+  },
+  "peerDependencies": {
+    "react": ">=18"
   }
 }
