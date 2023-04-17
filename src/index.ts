@@ -1,3 +1,3 @@
-import InputBox from "./components/InputBox";
+import InputBox from './components/InputBox'
 
 export { InputBox }
