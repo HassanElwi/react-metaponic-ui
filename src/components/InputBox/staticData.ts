@@ -10,7 +10,7 @@ export const themeMap = {
     label: 'text-white',
   },
   white: {
-    input: 'bg-[#FFFFFF] border border-[#4F5154] text-[#1B1B1B]',
+    input: 'bg-[#FFFFFF] border border-[#C1C1C1] text-[#1B1B1B]',
     label: 'text-[#1B1B1B]',
   },
   'dark-2': {

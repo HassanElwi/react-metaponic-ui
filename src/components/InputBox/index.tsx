@@ -17,7 +17,7 @@ const InputBox: React.FC<InputPropsInt> = ({
       <div className='flex flex-row'>
         <div
           className={`${defaultInputStyle} ${themeMap[themeColor]?.input} ${sizeMap[inputSize].input} ${
-            errorText && 'border-red-500'
+            errorText ? 'border-red-500':''
           }`}
         >
           <input className={`bg-inherit outline-none w-full`} {...props} />
