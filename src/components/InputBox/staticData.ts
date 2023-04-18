@@ -1,7 +1,7 @@
 export const sizeMap = {
-  small: { input: 'py-1 px-2', label: 'text-sm' },
+  small: { input: 'py-1 px-2', label: 'text-sm mb-2' },
   medium: { input: 'py-2 px-3', label: 'text-lg mb-2' },
-  large: { input: 'py-4 px-4', label: 'text-xl mb-4' },
+  large: { input: 'py-4 px-4', label: 'text-xl mb-2' },
 }
 
 export const themeMap = {
