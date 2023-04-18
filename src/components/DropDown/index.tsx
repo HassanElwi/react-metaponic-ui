@@ -1,115 +1,39 @@
-// import React, { ReactNode } from 'react'
+import React from 'react'
+import { DropDownPropsInt } from '../../types/Dropdown'
+import { themeMap, sizeMap } from '../InputBox/staticData'
+import { defaultSelectStyle } from './staticData'
 
-// interface ItemType {
-//   name: string
-//   value: string | number
-// }
+const DropDown: React.FC<DropDownPropsInt> = ({
+  label,
+  items,
+  themeColor = 'gray',
+  errorText,
+  rightIcon,
+  DropDownsize = 'small',
+  ...props
+}) => {
+  return (
+    <label className={` ${themeMap[themeColor].label}`}>
+      <p className={`${sizeMap[DropDownsize].label}`}>{label}</p>
+      <div className={`flex flex-row gap-2 items-center `}>
+        <select
+          className={`${defaultSelectStyle} ${themeMap[themeColor]?.input} ${sizeMap[DropDownsize].input} ${
+            errorText && 'border-red-500'
+          }`}
+          {...props}
+        >
+          <option disabled value={''} />
+          {items.map((item, index) => (
+            <option key={index} value={item.value}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+        {rightIcon ?? <></>}
+      </div>
+      <div className='text-red-500 text-xs pl-1 min-h-[12px] h-[20px]'>{errorText}</div>
+    </label>
+  )
+}
 
-// interface DropDownProps extends React.HTMLProps<HTMLSelectElement> {
-//   label?: string
-//   items: ItemType[]
-//   labelStyle?: any
-//   extraStyles?: any
-//   errorText?: string
-//   rightIcon?: ReactNode
-//   themeColor?: 'gray' | 'white'
-// }
-
-// const themeMap = {
-//   gray: {
-//     select: {
-//       backgroundColor: '#575757',
-//       borderColor: '#A2A2A2',
-//       color: 'white',
-//     },
-//     label: {
-//       color: 'white',
-//     },
-//   },
-//   white: {
-//     select: {
-//       backgroundColor: '#ffffff',
-//       borderColor: '#4F5154',
-//       color: '#1B1B1B',
-//     },
-//     label: {
-//       color: '#1B1B1B',
-//     },
-//   },
-// }
-
-// const defaultSelectStyle = {
-//   outline: 'none',
-//   padding: '4px',
-//   border: '1px solid',
-//   width: '100%',
-//   borderRadius: '3px',
-//   cursor: 'pointer',
-// }
-
-// const defaultLableStyle = {
-//   fontSize: '14px',
-// }
-
-// const DropDown: React.FC<DropDownProps> = ({
-//   label,
-//   items,
-//   labelStyle,
-//   extraStyles = {},
-//   themeColor,
-//   errorText,
-//   rightIcon,
-//   ...props
-// }) => {
-//   return (
-//     <label
-//       style={{
-//         ...defaultLableStyle,
-//         //@ts-ignore
-//         ...themeMap[themeColor]?.label,
-//         ...labelStyle,
-//       }}
-//     >
-//       <span>{label}</span>
-//       <div
-//         style={{
-//           display: 'flex',
-//           flexDirection: 'row',
-//           gap: '5px',
-//           alignItems: 'center',
-//         }}
-//       >
-//         <select
-//           style={{
-//             ...defaultSelectStyle,
-//             //@ts-ignore
-//             ...themeMap[themeColor]?.select,
-//             ...extraStyles,
-//           }}
-//           {...props}
-//         >
-//           <option disabled value={''} />
-//           {items.map((item, index) => (
-//             <option key={index} value={item.value}>
-//               {item.name}
-//             </option>
-//           ))}
-//         </select>
-//         {rightIcon ?? <></>}
-//       </div>
-//       <div
-//         style={{
-//           color: 'red',
-//           fontSize: '12px',
-//           paddingLeft: '2px',
-//           minHeight: '12px',
-//           height: '20px',
-//         }}
-//       >
-//         {errorText}
-//       </div>
-//     </label>
-//   )
-// }
-
-// export default DropDown
+export default DropDown
