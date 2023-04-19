@@ -9,12 +9,15 @@ const InputBox: React.FC<InputPropsInt> = ({
   rightIcon,
   inputSize = 'small',
   innerRightIcon,
+  isRequired=false,
   ...props
 }) => {
   return (
     <label className={`${themeMap[themeColor]?.label}`}>
       {/* Input label */}
-      <p className={`${sizeMap[inputSize].label}`}>{label}</p>
+      <p className={`${sizeMap[inputSize].label}`}>
+        {label} {isRequired && <span className="text-[#F12D2D]">*</span>}
+      </p>
 
       <div className='flex flex-row'>
         {/* Input container */}

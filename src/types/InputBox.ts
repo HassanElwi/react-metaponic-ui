@@ -7,4 +7,5 @@ export interface InputPropsInt extends React.HTMLProps<HTMLInputElement> {
   rightIcon?: ReactNode
   innerRightIcon?: ReactNode
   inputSize?: 'large' | 'small' | 'medium'
+  isRequired?: boolean
 }
