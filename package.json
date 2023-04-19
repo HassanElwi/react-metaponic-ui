@@ -1,6 +1,6 @@
 {
   "name": "react-metaponic-ui",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "description": "Metaponic custom components",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
